@@ -1,0 +1,11 @@
+# compiled binary
+terraform-provider-netlb
+
+# terraform files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# mac
+.DS_Store
