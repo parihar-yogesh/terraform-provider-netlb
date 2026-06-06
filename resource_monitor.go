@@ -57,7 +57,7 @@ func resourceMonitorCreate(ctx context.Context, d *schema.ResourceData, m interf
 		Timeout:  d.Get("timeout").(int),
 	}
 
-	_, err := client.doRequest("POST", "/api/monitors", monitor)
+	_, err := client.doRequest("POST", "/api/monitors/"+monitor.Name, monitor)
 	if err != nil {
 		return diag.FromErr(fmt.Errorf("error creating monitor: %w", err))
 	}

@@ -62,7 +62,7 @@ func resourceVirtualServerCreate(ctx context.Context, d *schema.ResourceData, m 
 		Monitor:     d.Get("monitor").(string),
 	}
 
-	_, err := client.doRequest("POST", "/api/virtualservers", vs)
+	_, err := client.doRequest("POST", "/api/virtualservers/"+vs.Name, vs)
 	if err != nil {
 		return diag.FromErr(fmt.Errorf("error creating virtual server: %w", err))
 	}

@@ -60,7 +60,7 @@ func resourcePoolCreate(ctx context.Context, d *schema.ResourceData, m interface
 		Members:  members,
 	}
 
-	_, err := client.doRequest("POST", "/api/pools", pool)
+	_, err := client.doRequest("POST", "/api/pools/"+pool.Name, pool)
 	if err != nil {
 		return diag.FromErr(fmt.Errorf("error creating pool: %w", err))
 	}
