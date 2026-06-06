@@ -9,3 +9,5 @@ terraform-provider-netlb
 
 # mac
 .DS_Store
+
+mockserver/netlb-server
